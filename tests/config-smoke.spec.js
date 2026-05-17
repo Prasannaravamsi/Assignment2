@@ -11,7 +11,7 @@ test("Config smoke test", async ({ page }) => {
     await expect(page.getByRole('button', { name: "Sign In" })).toBeVisible()
 })
 
-test.only("Compare page fixture and browser context", async ({ page, browser }) => {
+test("Compare page fixture and browser context", async ({ page, browser }) => {
     const BASE_URL = "https://eventhub.rahulshettyacademy.com"
     await openLoginPage(page)
     await getEmailField(page).fill("beginner@sample.com")
