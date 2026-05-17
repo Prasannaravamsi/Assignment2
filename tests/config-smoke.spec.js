@@ -20,7 +20,8 @@ test("Compare page fixture and browser context", async ({ page, browser }) => {
     const isolatedPage = await isolatedContext.newPage()
     await isolatedPage.goto(BASE_URL + "/login")
     await expect(isolatedPage.locator('h1:has-text("Sign in to EventHub")')).toBeVisible()
-    await expect(getEmailField(isolatedPage)).toHaveValue("");
+    // await expect(getEmailField(isolatedPage)).toHaveValue("");
+    await expect(getEmailField(isolatedPage)).toBeEmpty()
     await isolatedPage.close()
 })
 
